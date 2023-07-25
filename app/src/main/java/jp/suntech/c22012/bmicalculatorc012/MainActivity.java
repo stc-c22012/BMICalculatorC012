@@ -8,6 +8,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import androidx.fragment.app.DialogFragment;
+import androidx.annotation.Nullable;
 
 import com.google.android.material.snackbar.Snackbar;
 
@@ -17,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
 
         //ボタン・オブジェクトの用意
         Button btClear = findViewById(R.id.bt_Clear);
@@ -51,6 +57,8 @@ public class MainActivity extends AppCompatActivity {
             int id = view.getId();
             //idのR値に応じて処理を分岐
 
+            OrderConfirmDialogFragment dialogFragment = new OrderConfirmDialogFragment();
+
             if(id==R.id.bt_Clear){
                 inputAge.setText("");
                 inputHeight.setText("");
@@ -62,6 +70,14 @@ public class MainActivity extends AppCompatActivity {
                 outputBestWeight.setText("");
             }
             if(id == R.id.bt_Calculation){
+
+                String Age = inputAge.getText().toString();
+                int AgeNum = Integer.parseInt(Age);
+
+                if(AgeNum < 16) {
+                    dialogFragment.show(getSupportFragmentManager(), "OrderConfirmDialogFragment");
+                }
+
                 String Height = inputHeight.getText().toString();
                 double HeightNum = Double.parseDouble(Height);
                 String Weight = inputWeight.getText().toString();
