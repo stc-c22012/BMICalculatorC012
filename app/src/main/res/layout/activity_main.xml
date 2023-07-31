@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+
     <TextView
         android:id="@+id/tvBestWeight"
         android:layout_width="188dp"
@@ -35,7 +36,6 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:text="@string/bt_clear"
-        android:shape="rectangle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -46,7 +46,6 @@
         android:layout_height="0dp"
         android:layout_marginBottom="8dp"
         android:text="@string/bt_calculation"
-        android:shape="rectangle"
         app:layout_constraintBottom_toTopOf="@+id/bt_Clear"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -85,6 +84,7 @@
         android:id="@+id/tv_Weight2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
         android:text="@string/tv_weight2"
         app:layout_constraintBaseline_toBaselineOf="@+id/etWeight"
         app:layout_constraintStart_toEndOf="@+id/etWeight" />
@@ -186,5 +186,16 @@
         app:layout_constraintBottom_toTopOf="@+id/bt_Calculation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvResult"
+        android:layout_width="181dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="24dp"
+        android:gravity="center"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvBestWeight" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
